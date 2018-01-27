@@ -21,6 +21,6 @@ while True:  									# this creates an infinite loop, which will instruct the 	
             sleep(3)
             camera.capture(photo_path)
             camera.stop_preview()
-            while input_value == False:  					# this is an embedded loop which stops python printing the 												message every clock cycle.   
+            while input_value == False:  					#  this is an embedded loop which stops python printing the 												message every clock cycle.   
                 input_value = GPIO.input (12)  					# Instead it gets python to just check the status of the pin and 												assign it to the variable 'input_variable'.
                                                					# When the button is released, the variable value is 'True' and 											the loop is terminated.
