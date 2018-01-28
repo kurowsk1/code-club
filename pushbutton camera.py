@@ -10,9 +10,19 @@ from datetime import datetime
 timestamp = datetime.now().isoformat()
 photo_path = '/home/pi/Python, Camera/image captures/%s.jpg' %timestamp
 
+def picapture (input):
+  if input == True:
+    camera = PiCamera()
+    camera.rotation = 180
+    camera.start_preview()
+    sleep(3)
+    camera.capture(photo_path)
+    camera.stop_preview()
+  else:
+    pass
 
-while True:  									# this creates an infinite loop, which will instruct the 												processor to constantly check the pin state
-        input_value = GPIO.input(12)
+while True: # this creates an infinite loop, which will instruct the processor to constantly check the pin state
+    input_value = GPIO.input(12)
         if input_value == False: 						# this has been made for a switch with a pull-up resistor i.e. 												it's default state is high and pressing the button will 											pull-low
             camera=PiCamera()
 
